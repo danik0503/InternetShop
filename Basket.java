@@ -21,6 +21,7 @@ public class Basket {
         this();
         this.items = this.items + items;
         this.totalPrice = totalPrice;
+        this.totalWeight=totalWeight;
     }
 
     public static int getCount() {
@@ -32,10 +33,10 @@ public class Basket {
     }
 
     public void add(String name, int price) {
-        add(name, price, 1);
+        add(name, price, 1,1);
     }
 
-    public void add(String name, int price, int count) {
+    public void add(String name, int price, int count ,double weight) {
         boolean error = false;
         if (contains(name)) {
             error = true;
@@ -51,8 +52,9 @@ public class Basket {
         }
 
         items = items + "\n" + name + " - " +
-                count + " шт. - " + price;
+                count + " шт. - " + price + "руб." + weight + "гр.";
         totalPrice = totalPrice + count * price;
+        totalWeight = totalWeight + count * weight;
     }
 
     public void clear() {
@@ -62,6 +64,10 @@ public class Basket {
 
     public int getTotalPrice() {
         return totalPrice;
+    }
+
+    public double getTotalWeight(){
+        return totalWeight;
     }
 
     public boolean contains(String name) {
