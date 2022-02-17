@@ -22,7 +22,7 @@ public class Basket {
         this();
         this.items = this.items + items;
         this.totalPrice = totalPrice;
-        this.totalWeight=totalWeight;
+        this.totalWeight = totalWeight;
     }
 
     public static int getCount() {
@@ -64,14 +64,17 @@ public class Basket {
     }
 
     public int getTotalPrice() {
+
         return totalPrice;
     }
 
     public double getTotalWeight(){
+
         return totalWeight;
     }
 
     public boolean contains(String name) {
+
         return items.contains(name);
     }
 
